@@ -51,7 +51,63 @@ $
 $
   (S T) u dot v  = S(T u ) dot v = T u dot S^T v = u dot T^T S^T v #qedhere
 $ 
+
 (3)
 $
-  
+  (S^T) u dot v = S v dot u = u dot (S^T)^T v #qedhere
+$
+
+(4)
+$
+  (a times.o b) u dot v = (b dot u)a dot v = u dot (a dot v)b = u dot (b times.o a) v #qedhere  
+$
+
+(5)
+$
+  (a times.o b)(c times.o d)u = (a times.o b) (d dot u) c = (d dot u)(b dot c) a = (b dot c) (a times.o d)u #qedhere
+$
+
+(6)
+$
+  (e_i times.o e_i)(e_j times.o e_j) = (e_i dot e_j)(e_i times.o e_j) = cases(
+    0"," & i != j,
+    e_i times.o e_i"," & i = j,
+  )#qedhere
+$
+
+(7) Let $u = u_i e_i$
+$
+  (sum_i e_i times.o e_i)u =sum_i (e_i dot u) e_i = u_i e_i = u #qedhere 
+$
+
+(8)
+$
+  tr(S^T) = tr(sum_(i,j) S^T_(i j)e_i times.o e_j) = tr(sum_(i,j) S_(j,i) e_i times.o e_j) = sum_(i,j)S_(j,i) tr(e_i times.o e_j) = sum_i S_(i,i) = tr(S)#qedhere 
+$
+
+(9)
+$
+  tr(S T) &= tr((sum_(i,j)S_(i,j) e_i times.o e_j) (sum_(i,j)T_(i,j) e_i times.o e_j) )\
+  &= tr(sum_(i,j,k,l)S_(i,j) T_(k,l) (e_i times.o e_j)(e_k times.o e_l))\
+  &= tr(sum_(i,j,k,l)S_(i,j) T_(k,l) (e_j dot e_k)(e_i times.o e_l))\
+  &= tr(sum_(i,j,k)S_(i,j) T_(j,k) (e_i times.o e_k))\
+$
+
+$
+  tr(T S) &= tr((sum_(i,j)T_(i,j) e_i times.o e_j) (sum_(i,j)S_(i,j) e_i times.o e_j) )\
+  &= tr(sum_(i,j,k,l)T_(i,j) S_(k,l) (e_i times.o e_j)(e_k times.o e_l))\
+  &= tr(sum_(i,j,k,l)T_(i,j) S_(k,l) (e_j dot e_k)(e_i times.o e_l))\
+  &= tr(sum_(i,j,k)T_(i,j) S_(j,k) (e_i times.o e_k))\
+  &= tr(sum_(i,j,k)S_(i,j) T_(j,k) (e_i times.o e_k)) = tr(S T) #qedhere
+
+$
+
+(10)
+$
+  I dot S = tr(I^T S) = tr(S)
+$
+
+(11)
+$
+  R dot (S T) = tr(R^T S T) 
 $
