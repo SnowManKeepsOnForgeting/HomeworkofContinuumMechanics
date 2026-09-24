@@ -174,12 +174,31 @@ $
 
 7. Let $Q$ be an orthogonal tensor, and let $e$ be a vector with $Q e = e$.
 
-(a)Show that
+(a) Show that
 $
 Q^T e = e
 $.
-(b)Let $w$ be the axial vector corresponding to the skew part of $Q$. Show that $w$ is parallel to $e$.
+(b) Let $w$ be the axial vector corresponding to the skew part of $Q$. Show that $w$ is parallel to $e$.
 
-Proof: (a)$Q^T e = e<=>Q Q^T e = Q e  <=> e = e$#qedhere
+Proof: (a)$Q^T e = e<=>Q Q^T e = Q e  <=> e = e$.#qedhere
 
-(b) $w times e = 1/2(Q-Q^T)e = 0$ then $w$ is parallel to $e$.
+(b) $w times e = 1/2(Q-Q^T)e = 0$ then $w$ is parallel to $e$.#qedhere
+
+8. Show that if $w$ is the axial vector of $W in #text("Skm")$, then
+$
+  norm(w)_2 = 1/sqrt(2) norm(W)_2
+$
+Proof:
+Let $W$ be 
+$
+  mat(W) = mat(0,-gamma,beta;gamma,0,-alpha;-beta,alpha,0)
+$
+then $w = mat(alpha,beta,gamma)^T$. We have $norm(W)_2^2 = W dot W = 2(alpha^2 + beta^2 + gamma^2)$ and $norm(w)_2^2 = alpha^2 + beta^2 + gamma^2$. So $norm(w)_2 = 1/sqrt(2) norm(W)_2$.#qedhere
+
+9. Determine the spectrum, the characteristic spaces, and a spectral decomposition for each of the following tensors:
+$
+  A = alpha I + beta m times.o m \
+  B = m times.o n + n times.o m.
+$Here $alpha$ and $beta$ are scalars, while $m$ and $n$ are orthogonal unit vectors.
+
+Proof: For $A$ we have $A n = alpha I n + beta (m times.o m ) n = alpha n$ and $A m = alpha I m + beta (m times.o m ) m = (alpha + beta)m$. 
