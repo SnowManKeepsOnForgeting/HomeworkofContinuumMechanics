@@ -201,4 +201,54 @@ $
   B = m times.o n + n times.o m.
 $Here $alpha$ and $beta$ are scalars, while $m$ and $n$ are orthogonal unit vectors.
 
-Proof: For $A$ we have $A n = alpha I n + beta (m times.o m ) n = alpha n$ and $A m = alpha I m + beta (m times.o m ) m = (alpha + beta)m$. 
+Proof: For $A$ we have $A n = alpha I n + beta (m times.o m ) n = alpha n$ and $A m = alpha I m + beta (m times.o m ) m = (alpha + beta)m$. Then we have $A(m times n) = alpha (m times n) $. Thus ${x in V|m dot x = 0}$ and span${m}$ is the characteristic space of $alpha$. We have $A = (alpha+beta) m times.o m + alpha(I- m times.o m)$.
+
+For $B$ we have $B(m times n) = 0$, $B((m+n)/sqrt(2)) = sqrt(1/2)(m+n)$ and $B((m-n)/sqrt(2)) = -sqrt(1/2)(m-n)$. Thus the span${m times n}$, span${sqrt(1/2)(m+n)}$ and span$sqrt(1/2){m-n}$ is the characteristic space of B and we have $B =1/2(m+n) times.o (m+n) + 1/2(m-n) times.o (m-n)$.#qedhere
+
+10. Let $D in$ Sym, $Q in$ Orth. Show that the spectrum of $D$ equals the spectrum of $Q D  Q^T$. Show further that if $e$ is an eigenvector of $D$, then $Q e$ is an eigenvector of $Q D  Q^T$ corresponding to the same eigenvalue.
+
+Proof: For any spectrum $lambda$ of $D$ satisfing $D e = lambda e$ we have $Q D Q^T (Q e) = Q D e = lambda (Q e)$. Then the spectrum of $D$ remain and the conclusion is also true. #qedhere
+
+11.  A tensor $P$ is a perpendicular projection if $P$ is symmetric and $P^2 = P$.
+(a) Let $n$ be a unit vector. Show that each of the following tensors is a
+perpendicular projection:
+$ I, quad 0, quad n times.o n, quad I - n times.o n. $ 
+(b) Show that, conversely, if $P$ is a perpendicular projection, then $P$
+admits one of the representations above.
+
+Proof: (a) $I^2 = I$, $0^2 =0$, $(n times.o n)(n times.o n) = (n dot n) (n times.o n) =(n times.o n)$ thus $(n times.o n)^2 = (n times.o n)$ and $(I - n times.o n)(I - n times.o n) = I^2 - 2 I(n times.o n) + (n times n)^2 = I - n times.o n$. #qedhere
+
+(b) Let $lambda$ be any spectrum of $P$ and $lambda$ must satisfy $P^3e = P e = lambda^3e = lambda e$. So $lambda^3 - lambda = 0$. We have 
+$
+  lambda^3 -lambda = lambda(lambda-1)(lambda+1) = 0
+$. Thus $lambda in {0,-1,1}$ and $P in$ Sym which means $P$ can be represented by its spectrum with unit vector. Which means $P$ must be the form of represetation above. #qedhere
+
+12. Let $F = R U$ and $F = V R$ denote the right and left polar decompositions of $F in upright("Lin")^+$.
+
+(a) Show that $U$ and $V$ have the same spectrum $(omega_1, omega_2, omega_3)$.
+
+(b) Show that $F$ and $R$ admit the representations
+  $
+  F = sum_i omega_i f_i times.o e_i,
+  $
+  $
+  R = sum_i f_i times.o e_i,
+  $
+where $e_i$ and $f_i$ are, respectively, the eigenvectors of $U$ and $V$ corresponding to $omega_i$.
+
+Proof: (a) For any $omega in {omega_1,omega_2,omega_3}$ and corresponding $e$ we have $U e = omega e <=> R U e = omega R e <=> V (R e) = omega (R e)$. #qedhere 
+
+(b) From (a) we have $f_i = R e_i$. So $R = sum_i R e_i times.o e_i= sum_i f_i times.o e_i$ and $F e_i = omega R e_i$ so $F = sum_i F e_i times.o e_i = sum_i omega_i R=sum_i omega_i f_i times.o e_i$. #qedhere
+
+13. Let $R$ be the rotation corresponding to the polar decomposition of $F in upright("Lin")^+$. Show that $R$ is the closest rotation to $F$ in the sense that
+  $
+  norm(F - R)_2 < norm(F - Q)_2
+  $
+for all rotations $Q != R$.
+
+Proof: 
+$
+    norm(F - Q)_2^2 -norm(F - R)_2^2 = 2 F dot R - 2F dot Q = 2R U dot (R-Q)=2U dot (I - R^T Q)\
+    =U dot (R^T Q - I)(R^T Q - I)^T = tr((R^T Q - I)^T U(R^T Q - I))
+$
+For any vector $x$ we have $x^T (R^T Q - I)^T U(R^T Q - I)x = (x^T (R^T Q - I)^T) U((R^T Q - I)x)>=0$ iff $x=0 or I = R^T Q$, so $norm(F - Q)_2^2 -norm(F - R)_2^2 >=0$ iff $I = R^T Q$ i.e $R=Q$. #qedhere
