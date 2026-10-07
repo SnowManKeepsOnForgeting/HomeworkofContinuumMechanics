@@ -57,12 +57,44 @@ $#qedhere
 
 
 2. Let $G$ be defined on the set of all invertible tensors by $G(A) = A^(-1)$. Assuming that $G$ is differentiable, show that
-
 $ D G(A)[H] = - A^(-1) H A^(-1). $
+
+Proof: For any $H in upright("Lin")$, differentiate the identity $A G(A) = I$
+in the direction $H$. By the product rule,
+$
+  H G(A) + A D G(A)[H] = 0.
+$
+Since $G(A) = A^(-1)$, multiplying on the left by $A^(-1)$ gives
+$
+  A^(-1) H A^(-1) + D G(A)[H] = 0.
+$
+Therefore
+$
+  D G(A)[H] = - A^(-1) H A^(-1).
+$#qedhere
 
 3. Let $phi$ be defined on the set of all invertible tensors by $phi(A) = det(A^2)$. Compute $D phi(A)$.
 
+Solution: Let $F(A) = A^2$ and $psi(B) = det B$. Since $A^2$ is invertible, the chain rule gives
+$
+  D phi(A)[H]
+    &= D psi(F(A))[D F(A)[H]] \
+    &= det(A^2) tr(A^(-2)(A H + H A)) \
+    &= det(A^2) (tr(A^(-1) H) + tr(A^(-2) H A)) \
+    &= 2 det(A^2) tr(A^(-1) H) \
+    &= 2 (det A)^2 tr(A^(-1) H).
+$#qedhere
+
 4. Let $phi(v) = e^(v^2)$ for all $v in cal(U)$. Compute $D phi(v)$.
+
+Solution: Let $f(v) = v^2 = v dot v$. For any vector $h$,
+$
+  D f(v)[h] = h dot v + v dot h = 2 v dot h.
+$
+By the chain rule,
+$
+  D phi(v)[h] = e^(f(v)) D f(v)[h] = 2 e^(v^2) (v dot h).
+$#qedhere
 
 5. Let $G: upright("Lin") -> upright("Lin")$ be defined by
 
@@ -70,7 +102,24 @@ $ G(A) = K(A) A^T, $
 
 where $K: upright("Lin") -> upright("Lin")$ is differentiable. Show that if $G(A)$ is symmetric for each $A$ and if $K(I) = 0$, then $D K(I)$ has symmetric values (i.e., $D K(I)[H] = D K(I)[H]^T$for every $H in upright("Lin")$).
 
+Proof:
+$
+  D G(A)[H] = D K(A)[H] A^T + K(A) H^T.
+$
+At $A = I$, the assumption $K(I) = 0$ gives $D G(I)[H] = D K(I)[H]$.
+Since $G(A) = G(A)^T$ for every $A$, we have
+$
+  D G(A)[H] = (D G(A)[H])^T.
+$
+Therefore $D K(I)[H] = (D K(I)[H])^T$ for every $H$. #qedhere
+
 6. Let $Q: RR -> upright("Orth")$ be differentiable.Show that $dot(Q)(t) Q(t)^T$ is skew at each $t in RR$.
+
+Proof: We have $Q(t) Q(t)^T = I$. Differentiating with respect to $t$,
+$
+  dot(Q)(t) Q(t)^T + Q(t) dot(Q)(t)^T = 0.
+$
+so $dot(Q)(t) Q(t)^T$ is skew. #qedhere
 
 7. Let $G: upright("Lin") -> upright("Lin")$ be differentiable and satisfy 
 $
@@ -82,7 +131,38 @@ $
 $ 
 for all $A in upright("Lin")$ and $W in upright("Skew")$.
 
+Proof: Let $Q(t) = e^(W t)$. Since $W^T = -W$,
+$
+  Q(t)^T = e^(-W t) = Q(t)^(-1),
+$
+so $Q(t)$ is orthogonal. Therefore we have
+$
+  e^(W t) G(A) e^(-W t) = G(e^(W t) A).
+$
+Differentiating at $t = 0$ gives
+$
+  W G(A) + G(A) W^T = D G(A)[W A].
+$#qedhere
+
 8. Compute the derivatives of the principal invariants $l_1,l_2,l_3$: $upright("Lin")->RR$.
+
+Solution: The principal invariants are
+$
+  l_1(A) &= tr A, \
+  l_2(A) &= 1/2 ((tr A)^2 - tr(A^2)), \
+  l_3(A) &= det A.
+$
+and we have
+$
+  D tr(A^2)[H] &= tr(A H + H A) = 2 tr(A H), \
+  D tr(A^3)[H] &= tr(A^2 H + A H A + H A^2) = 3 tr(A^2 H).
+$
+Thus
+$
+  D l_1(A)[H] &= tr H, \
+  D l_2(A)[H] &= (tr A)(tr H) - tr(A H),\
+  D l_3(A)[H] &= (det A) tr(A^(-1) H).
+$#qedhere
 
 9. Let $alpha$, $phi$, $u$, $v$, $w$, and $S$ be smooth fields with $alpha$ and $phi$ scalar valued; $u$, $v$, and $w$ vector valued; and $S$ tensor valued. Establish identities, similar to (2), for
 
