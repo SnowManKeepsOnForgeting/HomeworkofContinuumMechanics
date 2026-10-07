@@ -173,3 +173,74 @@ $#qedhere
   (c) $op("div")(phi S)$
 
   (d) $Delta (v dot w)$ (with $v$ and $w$ of class $C^2$).
+
+
+10. Let $phi$ and $v$ be class $C^2$. Show that
+
+  (a) $upright("curl") nabla phi = 0$,
+
+  (b) $upright("div") upright("curl") v = 0$.
+
+
+11. $r(x) = x - o$.
+
+  (a) Show that $nabla r = I$.
+
+  (b) Let $e = r / abs(r)$. Compute $(nabla e)e$.
+
+
+12. $r(x) = x - o$. Let $a in cal(V)$, $S in upright("Lin")$, and define $phi: cal(E)^3 -> bb(R)$ by
+$
+  phi = a dot (r times S r).
+$
+Compute $nabla phi$.
+
+
+13. $r(x) = x - o$. Let $u$ be the vector field on $cal(E)^3 - {o}$ defined by
+$
+  u = r / abs(r)^3.
+$
+Show that $u$ is harmonic. Find a scalar field whose gradient is $u$.
+
+
+14. Let $u$ be a class $C^2$ vector field. Show that
+
+  (a) $upright("div") ((nabla u)u) = nabla u dot (nabla u)^T + u dot (nabla upright("div") u)$,
+
+  (b) $nabla u dot (nabla u)^T = upright("div") ((nabla u)u - (upright("div") u)u) + (upright("div") u)^2$.
+
+
+15. Let $u$ and $v$ be smooth. Show that
+$
+  upright("div") (u times v)
+  = v dot upright("curl") u - u dot upright("curl") v.
+$
+
+16. A homogeneous deformation of the form
+$
+  x_1 &= p_1 + gamma p_2, \
+  x_2 &= p_2, \
+  x_3 &= p_3
+$
+is called a _pure shear_. For this deformation compute:
+
+  (a) the matrices of $F$, $C$, and $B$;
+
+  (b) the list $cal(I)_C$ of principal invariants of $C$ (or $B$);
+
+  (c) the principal stretches.
+
+
+17. Compute $C$, $B$, and $cal(I)_C$ for an extension of amount $lambda$ in the direction $e$.
+
+
+18. Show that a deformation is isochoric if and only if $det C = 1$.
+
+
+19. Show that
+$
+  C = I + nabla u + (nabla u)^T + (nabla u)^T nabla u.
+$
+
+
+20. Show that a deformation is rigid if and only if $cal(I)_C = (3, 3, 1)$.
